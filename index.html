@@ -10,6 +10,15 @@
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
+  <script language="JavaScript">
+
+    function goToMenu() {
+        var menuId = document.getElementById("menu_id").value;
+        
+        document.getElementById("submit").href = "template://deeplink?action=open_menu_option&menu_id=" + menuId;
+    }
+    </script>
+
 </head>
 
 <body>
@@ -38,5 +47,14 @@
     </li>
   </ul>
 
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  ---------------------------
+  <br/>
+  <p>Dynamic Menu</p>
+  <input id="menu_id" type=text placeholder="100">
+  <a class="button" id="submit" href="#" onclick="login()">Go to menu</a>
 </body>
 </html>
