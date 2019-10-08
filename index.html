@@ -18,10 +18,13 @@
         document.getElementById("submit").href = "template://deeplink?action=open_menu_option&menu_id=" + menuId;
     }
 
+    function showAsset() {
+      doActionOnId('show_asset', 'asset_id', 'asset_id', 'submit_asset')
+    }
     function doActionOnId(action, input_id, url_name, submit_id) {
       var asset = document.getElementById(id).value;
 
-      document.getElementById(submit_id).href = `template://deeplink?action=${action}&${id}=${asset}`
+      document.getElementById(submit_id).href = "template://deeplink?action=" + action + "&" + id + "=" + asset
     }
     </script>
 
@@ -68,7 +71,7 @@
     <span>
         <p>Dynamic Show Asset</p>
         <input id="asset_id" type=text placeholder="134">
-        <a class="button" id="submit_asset" href="#" onclick="doActionOnId('show_asset', 'asset_id', 'asset_id', 'submit_asset')">Go to asset</a>
+        <a class="button" id="submit_asset" href="#" onclick="showAsset()">Go to asset</a>
     </span>
 
     <span>
