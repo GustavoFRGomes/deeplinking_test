@@ -18,7 +18,7 @@
         document.getElementById("submit").href = "template://deeplink?action=open_menu_option&menu_id=" + menuId;
     }
 
-    function doActionOnId(action, id, submit_id) {
+    function doActionOnId(action, input_id, url_name, submit_id) {
       var asset = document.getElementById(id).value;
 
       document.getElementById(submit_id).href = `template://deeplink?action=${action}&${id}=${asset}`
@@ -67,8 +67,20 @@
     </span>
     <span>
         <p>Dynamic Show Asset</p>
-        <input id="asset_id" type=text placeholder="">
-        <a class="button" id="submit_asset" href="#" onclick="goToMenu('show_asset', 'asset_id', 'submit_asset')">Go to asset</a>
+        <input id="asset_id" type=text placeholder="134">
+        <a class="button" id="submit_asset" href="#" onclick="doActionOnId('show_asset', 'asset_id', 'asset_id', 'submit_asset')">Go to asset</a>
+    </span>
+
+    <span>
+        <p>Dynamic Play Asset</p>
+        <input id="play_asset_id" type=text placeholder="23082">
+        <a class="button" id="submit_play_asset" href="#" onclick="doActionOnId('play_asset', 'play_asset_id', 'asset_id', 'submit_play_asset')">Play asset</a>
+    </span>
+
+    <span>
+        <p>Dynamic Open Playlist</p>
+        <input id="playlist_id" type=text placeholder="224">
+        <a class="button" id="submit_playlist" href="#" onclick="doActionOnId('open_playlist', 'playlist_id', 'playlist_id', 'submit_playlist')">Play asset</a>
     </span>
   </div>
   
