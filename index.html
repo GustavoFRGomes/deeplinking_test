@@ -22,7 +22,7 @@
       doActionOnId('show_asset', 'asset_id', 'asset_id', 'submit_asset')
     }
     function doActionOnId(action, input_id, url_name, submit_id) {
-      var asset = document.getElementById(id).value;
+      var asset = document.getElementById(input_id).value;
 
       document.getElementById(submit_id).href = "template://deeplink?action=" + action + "&" + url_name + "=" + asset
     }
