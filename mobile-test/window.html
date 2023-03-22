@@ -15,6 +15,10 @@
     function openWindow() {
         var targetWebsite = document.getElementById("target_website").value;
 
+        if (targetWebsite === "" || targetWebsite === undefined) {
+            targetWebsite = document.getElementById("target_website").placeholder
+        }
+
         open(targetWebsite)
     }
     </script>
