@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <script language="JavaScript">
+
+    function openWindow() {
+        var targetWebsite = document.getElementById("target_website").value;
+
+        open(targetWebsite)
+    }
+    </script>
+
+</head>
+
+<body>
+    <span>
+        <p>Perform Window Open</p>
+        <input id="target_website" type=text placeholder="https://www.1und1.de/">
+        <a class="button" id="submit_asset" href="#" onclick="openWindow()">Window Open</a>
+    </span>
+</body>
+</html>
