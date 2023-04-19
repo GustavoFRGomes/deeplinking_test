@@ -28,7 +28,7 @@
             text: getValueOrPlaceholder("share_text"),
             url: getValueOrPlaceholder("share_url")
         }
-        if ('Android' in window) {
+        if ('AndroidMailer' in window) {
             Android.nativeShare(shareData.title, shareData.text, shareData.url)
             return
         }
