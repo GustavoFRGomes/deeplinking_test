@@ -21,6 +21,33 @@
 
         open(targetWebsite)
     }
+
+    function share() {
+        const shareData = {
+            title: getValueOrPlaceholder("share_title"),
+            text: getValueOrPlaceholder("share_text"),
+            url: getValueOrPlaceholder("share_url")
+        }
+        if ('Android' in window) {
+            Android.nativeShare(shareData.title, shareData.text, shareData.url)
+            return
+        }
+        try {
+            navigator.share(shareData)
+            console.log('shared successfully')
+        } catch (err) {
+            console.log('Error: ' + err)
+        }
+    }
+
+    function getValueOrPlaceholder(elementId) {
+        var elementValue = document.getElementById(elementId).value;
+
+        if (elementValue === "" || elementValue === undefined) {
+            return document.getElementById(elementId).placeholder
+        }
+        return elementValue
+    }
     </script>
 
 </head>
@@ -30,6 +57,16 @@
         <p>Perform Window Open</p>
         <input id="target_website" type=text placeholder="https://www.1und1.de/">
         <a class="button" id="submit_asset" href="#" onclick="openWindow()">Window Open</a>
+    </span>
+
+    <br/>
+    <br/>
+    <span>
+        <p>Share Option</p>
+        <input id="share_title" type=text placeholder="Home page">
+        <input id="share_text" type=text placeholder="Some demo text here">
+        <input id="share_url" type=text placeholder="https://www.1und1.de/">
+        <a class="button" id="submit_asset" href="#" onclick="share()">Window Open</a>
     </span>
 </body>
 </html>
