@@ -39,6 +39,16 @@
             console.log('Error: ' + err)
         }
     }
+    
+    function openPlaystore() {
+      const referrer = {
+        key: getValueOrPlaceholder("gplay_key"),
+        value: getValueOrPlaceholder("gplay_value"),
+        appId: getValueOrPlaceholder("gplay_app_id")
+      }
+      const url = "market://details?id=" + referrer.appId + "&" + key + "=" + value;
+      window.location.replace(url);
+    }
 
     function getValueOrPlaceholder(elementId) {
         var elementValue = document.getElementById(elementId).value;
@@ -48,6 +58,7 @@
         }
         return elementValue
     }
+  
     </script>
 
 </head>
@@ -66,7 +77,17 @@
         <input id="share_title" type=text placeholder="Home page">
         <input id="share_text" type=text placeholder="Some demo text here">
         <input id="share_url" type=text placeholder="https://www.1und1.de/">
-        <a class="button" id="submit_asset" href="#" onclick="share()">Window Open</a>
+        <a class="button" id="submit_asset" href="#" onclick="share()">Share</a>
     </span>
+  
+  <br/>
+  <br/>
+  <span>
+      <p>Share Option</p>
+      <input id="gplay_key" type=text placeholder="data">
+      <input id="gplay_value" type=text placeholder="value">
+      <input id="gplay_app_id" type=text placeholder="app_id">
+      <a class="button" id="submit_asset" href="#" onclick="openPlaystore()">Open Google Play</a>
+  </span>
 </body>
 </html>
