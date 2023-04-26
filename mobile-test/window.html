@@ -46,7 +46,7 @@
         value: getValueOrPlaceholder("gplay_value"),
         appId: getValueOrPlaceholder("gplay_app_id")
       }
-      const url = "market://details?id=" + referrer.appId + "&" + key + "=" + value;
+      const url = "market://details?id=" + referrer.appId + "&" + referrer.key + "=" + referrer.value;
       window.location.replace(url);
     }
 
