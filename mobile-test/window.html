@@ -58,6 +58,12 @@
         }
         return elementValue
     }
+
+    function mailToLaunch() {
+      const emailElementValue = getValueOrPlaceholder("to_field").value
+
+      window.location.href = "mailto:" + emailElementValue;
+    }
   
     </script>
 
@@ -88,6 +94,13 @@
       <input id="gplay_value" type=text placeholder="value">
       <input id="gplay_app_id" type=text placeholder="app_id">
       <a class="button" id="submit_asset" href="#" onclick="openPlaystore()">Open Google Play</a>
+  </span>
+  <br/>
+  <br/>
+  <span>
+      <p>Email To Option</p>
+      <input id="to_field" type=text placeholder="test@mail.com">
+      <a class="button" id="submit_asset" href="#" onclick="mailToLaunch()">Email To</a>
   </span>
 </body>
 </html>
